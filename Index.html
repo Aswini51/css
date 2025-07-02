@@ -2,63 +2,79 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Sticky Header Example</title>
+  <title>Sticky Header Layout</title>
   <style>
-    body {
+    * {
+      box-sizing: border-box;
       margin: 0;
-      font-family: Arial, sans-serif;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
     }
 
     header {
       position: sticky;
       top: 0;
-      background-color: #ffffff;
+      background-color: #f8f9fa;
+      padding: 10px 40px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      padding: 15px 30px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-      z-index: 1000;
+      justify-content: space-between;
+      z-index: 999;
     }
 
-    .logo {
-      font-size: 24px;
-      font-weight: bold;
-      color: #333;
+    .nav-left,
+    .nav-right {
+      display: flex;
+      gap: 20px;
     }
 
-    nav a {
-      margin: 0 15px;
+    .nav-left a,
+    .nav-right a {
       text-decoration: none;
       color: #333;
       font-weight: 500;
     }
 
-    nav a:hover {
+    .nav-left a:hover,
+    .nav-right a:hover {
       color: #007bff;
     }
 
+    .logo {
+      font-size: 22px;
+      font-weight: bold;
+      color: #444;
+    }
+
     main {
-      padding: 30px;
-      height: 2000px; /* for scroll demo */
+      padding: 40px;
+      height: 1500px; /* just to enable scrolling */
     }
   </style>
 </head>
 <body>
 
   <header>
-    <div class="logo">MyLogo</div>
-    <nav>
+    <div class="nav-left">
       <a href="#">Home</a>
+      <a href="#">Blog</a>
+    </div>
+
+    <div class="logo">MySite</div>
+
+    <div class="nav-right">
       <a href="#">About</a>
-      <a href="#">Services</a>
       <a href="#">Contact</a>
-    </nav>
+    </div>
   </header>
 
   <main>
-    <h1>Scroll down to see the sticky header</h1>
-    <p>This is your page content. The header will stay at the top while scrolling.</p>
+    <h1>Sticky Header Example</h1>
+    <p>Scroll the page to see the header stick to the top of the screen.</p>
   </main>
 
 </body>
